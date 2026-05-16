@@ -1,0 +1,112 @@
+.contact{
+    background-color: var(--bg_color);
+    width: 100%;
+    height: 100%;
+}
+.contact .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+.contact .container .contact_us .address,.phone,.email{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid var(--main_color);
+    border-radius: 10px;
+    padding: 10px 5px;
+    margin-bottom: 50px;
+    background-color: var(--white_color);
+    transition: 0.3s;
+
+}
+.contact .container .contact_us .address h1,.phone h1,.email h1{
+    color: var(--main_color);
+    margin-bottom: 10px;
+}
+.contact .container .contact_us .address p,.phone p,.email p{
+    color: var(--heading_color);
+    margin-bottom: 10px;
+}
+
+.contact .container .contact_us .address:hover,.phone:hover,.email:hover{
+    scale: 1.1;
+}
+
+
+.contact .container .contact_form{
+     position: sticky;
+    top: 20px;
+    background-color: var(--white_color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px 0;
+    border: 1px solid var(--main_color);
+    border-radius: 10px;
+}
+.contact .container .contact_form .header_form{
+   
+    margin-bottom: 20px;
+    color: var(--main_color);
+    padding: 2px 5px;
+    text-align: center;
+}
+.contact .container .contact_form  form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.contact .container .contact_form  form input{
+    width: 80%;
+    margin-bottom: 20px;
+    border: 1px solid var(--main_color);
+    border-radius: 8px;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px 5px;
+}
+.contact .container .contact_form  form textarea{
+    width: 80%;
+    margin-bottom: 40px;
+    border: 1px solid var(--main_color);
+    border-radius: 8px;
+    height: 80px;  
+    padding: 10px 5px;
+}
+.contact .container .contact_form  form button{
+    width: 80%;
+     margin-bottom: 20px;
+     background-color: var(--main_color);
+     height:40px ;
+     color: var(--white_color);
+     border: 1px solid var(--main_color);
+     border-radius:10px ;
+     font-size: 25px;
+     cursor: pointer;
+}
+.contact .container .contact_form  form button:hover{
+    color: var(--white_color);
+    background-color: var(--main_color);
+}
+
+
+
+@media  (max-width: 426px) {
+  .contact .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contact .container .contact_form {
+    width: 90%;
+  }
+
+  .contact .container .contact_us {
+    width: 90%;
+  }
+}

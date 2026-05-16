@@ -1,0 +1,200 @@
+
+.productdetails{
+  padding: 50px 0;
+}
+.productdetails .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.productdetails .container .left{
+  width: 40%;
+}
+.productdetails .container .left .topimage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productdetails .container .left .topimage img{
+   width: auto;
+  height: 450px;
+  object-fit: contain; 
+
+}
+
+.productdetails .container .left .bottomimage{
+  display: flex;
+  justify-content: space-between;
+ 
+
+}
+.productdetails .container .left .bottomimage img{
+  width: 150px;
+  height: 150px;
+  object-fit: contain; 
+
+}
+.productdetails .container .right{
+  width: 58%;
+}
+.productdetails .container .right .name{
+  margin-bottom: 30px;
+  color: var(--main_color);
+}
+.container .right .iconstar{
+   display: flex;
+    gap: 5px;
+     margin-bottom: 15px;
+}
+.right .iconstar svg{
+  color: #F8d941;
+  font-size: 20px;
+}
+.right .price{
+   margin-bottom: 20px;
+  color: var(--p_color);
+  font-size: 25px;
+
+}
+.right h3{
+margin-bottom: 20px;
+font-weight: 500;
+font-size: 16px;
+}
+.right p{
+    margin-bottom: 20px;
+  color: var(--p_color);
+line-height: 1.5;
+}
+.stock{
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.right .btn{
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+/* .right .icon{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+}
+.right .icon svg{
+  font-size: 20px;
+} */
+
+.right .icon{
+   display: flex;
+ gap: 20px;
+transition: 0.3s;
+
+}
+.right .icon span{
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var( --bg_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
+}
+/* .right .icon span:hover{
+  background-color: var(--main_color);
+}
+.right .icon span svg:hover{
+  fill: var(--white_color);
+} */
+
+
+.right .in-cart{
+  background: transparent;
+  color: var(--main_color);
+  pointer-events: none;
+  border: 1px solid var(--main_color);
+}
+span.isinwishlist{
+  background-color: transparent;
+  pointer-events: none;
+}
+.isinwishlist svg{
+  color: red;
+}
+
+
+
+/* /////////////////////////////////////madia quart ////////////// */
+
+@media (max-width: 769px) {
+.productdetails .container .left .topimage img{
+   width: 300px;
+  height: 450px;
+  object-fit: contain; 
+
+}
+  .productdetails .container .left .bottomimage img{
+    width: 100px;
+    height: 100px;
+  object-fit: contain; 
+  }
+}
+
+
+@media (max-width: 426px) {
+  .productdetails .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+   .productdetails .container .left {
+  width: 100%;
+}
+  .productdetails .container .right {
+  width: 100%;
+}
+
+}
+
+@media (max-width: 376px) {
+  .productdetails .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+   .productdetails .container .left {
+  width: 100%;
+}
+  .productdetails .container .right {
+  width: 100%;
+}
+.productdetails .container .right .name {
+  font-size: 22px;
+}
+.right h3{
+  font-size: 15px;
+}
+}
+@media (max-width: 321px) {
+  .productdetails .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+   .productdetails .container .left {
+  width: 100%;
+}
+  .productdetails .container .right {
+  width: 100%;
+}
+.productdetails .container .right .name {
+  font-size: 20px;
+}
+.right h3{
+  font-size: 14px;
+}
+}
