@@ -16,6 +16,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
   const location =useLocation()
   const [data,setData]=useState([])
   const [isOpen, setIsOpen]=useState(false);
+  const [mobilemenu,setMobilemenu]=useState(false);
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.item.theme);
   useEffect(()=>{
@@ -36,6 +37,7 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
   },[])
 useEffect(()=>{
   setIsOpen(false)
+  setMobilemenu(false)
 },[location.pathname])
 
 
@@ -51,7 +53,7 @@ useEffect(()=>{
       <div className="container">
         <div className="nav">
           <div className="category_nav">
-            <div className="category_btn" onClick={()=>{setIsOpen(!isOpen)}}>
+            <div className="category_btn" onClick={()=>{setIsOpen(!isOpen);setMobilemenu(false)}}>
               <HiMenu  />
               <p className='menu2'>Browse Category</p>
               <MdArrowDropDown className='menu1'/>
@@ -66,13 +68,25 @@ useEffect(()=>{
 
             </div>
           </div>
+          
           <div className="category_link">
            { NavLink.map((item)=>(
              <li key={item.link} className={location.pathname === item.link? "active":""}><Link to={item.link}>{item.name}</Link></li> 
             ))}
 
           </div>
+                <div className="mobile_menuicon" onClick={() => {setMobilemenu(!mobilemenu);setIsOpen(false)}}>
+            <HiMenu /> <span className='mo_page'>page</span>
+          </div>
+          <div className={`mobile_menu ${mobilemenu ? "active" : ""}`}>
+            {NavLink.map((item)=>(
+              <li key={item.link} className={location.pathname === item.link? "active":""}><Link to={item.link}>{item.name}</Link></li> 
+              
+            ))}
+          </div>
         </div>
+  
+          
         <div className="register_icon">
           <button className="theme_btn"onClick={() => dispatch(toggleTheme())}>
             {theme === "light" ? <MdDarkMode /> : <MdLightMode />}</button>

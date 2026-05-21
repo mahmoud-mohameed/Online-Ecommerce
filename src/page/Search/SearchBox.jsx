@@ -49,7 +49,7 @@ const SearchBox = () => {
 
   return (
     <>
-    <div className="search-box_2">
+    <div className="search-box">
 
    
     <form onSubmit={handelonsubmit} className="search-box">

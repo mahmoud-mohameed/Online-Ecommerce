@@ -14,6 +14,9 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import Footer from './components/footer/Footer'
 import Layout from './page/Layout'
+import About from './page/about/About'
+import Blog from './page/Blog/Blog'
+
 
 
 
@@ -42,6 +45,9 @@ function App() {
         
 
        <Route path="/" element={<Home />} />
+       <Route path="/about" element={<About />} />
+       <Route path="/blog" element={<Blog />} />
+      
        <Route path="/contact" element={<Contact/>} />
        <Route path="/search" element={<SearchResult />} />
        <Route path="/shopcart" element={<ShoppingCart />} />

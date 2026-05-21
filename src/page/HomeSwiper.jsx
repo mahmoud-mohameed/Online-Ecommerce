@@ -13,7 +13,7 @@ const HomeSwiper = ({data}) => {
       slidesPerView={5}
       loop={true}
   autoplay={{
-    delay: 2500,
+    delay: 5000,
     disableOnInteraction: false,
     
   }}
@@ -28,12 +28,13 @@ const HomeSwiper = ({data}) => {
       slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 5,
+      slidesPerView: 4,
     },
   }}
   
+  
 
-       navigation={true} modules={[Navigation,Autoplay]} className="mySwiper">
+       navigation={false} modules={[Navigation,Autoplay]} className="mySwiper">
        {data?.map((item) => (
         <SwiperSlide key={item.id}>
           <Cart item={item} />

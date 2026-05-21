@@ -1,11 +1,34 @@
-import React from 'react'
+import React , { useRef } from 'react'
 import './Contact.css'
 import PageTransition from '../PageTransition'
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { MdMarkEmailRead } from "react-icons/md";
 
+import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
+
 const Contact = () => {
+     const form = useRef();
+    const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      'service_i8ugaq9',
+      'template_ioialir',
+      form.current,
+      '6UTNd9fh1UdFqlyaL'
+    )
+    .then(() => {
+      toast.success("Message sent successfully")
+      form.current.reset(); 
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Error sending message");
+    });
+};
   return (
     <PageTransition>
  <div className="contact">
@@ -31,11 +54,11 @@ const Contact = () => {
             <h1 className="header_form">
                 Leave your message here
             </h1>
-            <form>
-                <input required placeholder='Enter your name'/>
-                <input placeholder='Enter your phone'/>
-                <textarea placeholder='Enter your message' />
-                <button>send message</button>
+            <form ref={form} onSubmit={sendEmail}>
+                <input name='name' required placeholder='Enter your name'/>
+                <input name='phone' required placeholder='Enter your phone'/>
+                <textarea name='message' required placeholder='Enter your message' />
+                <button type="submit">send message</button>
             </form>
         </div>
     </div>
